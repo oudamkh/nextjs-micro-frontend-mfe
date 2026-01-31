@@ -1,0 +1,80 @@
+import React from 'react';
+import MultiLevelSidebar from '../../components/sidebar-component';
+
+const sampleMenuData = {
+  menus: [
+    {
+      id: 1,
+      code: "DEMO",
+      name_en: "DEMO Management",
+      name_kh: "DEMO Management",
+      short_name_en: "DEMO",
+      short_name_kh: "DEMO",
+      description_en: "DEMO",
+      description_kh: "DEMO",
+      icon: "settings",
+      href: "/demo-management/components/tabs/basic",
+      order_sort: 1,
+      items: [
+        {
+          id: "tabs",
+          code: "TB",
+          name_en: "Tabs",
+          name_kh: "Tabs",
+          href: "/demo-management/components/tabs/basic",
+          icon: "settings",
+          show_badge: false,
+          is_new: false,
+          order_sort: 1,
+          children: [
+            {
+              id: "tabs_basic",
+              code: "Basic Tab",
+              name_en: "Basic Tab",
+              name_kh: "មើលគណនី",
+              href: "/demo-management/components/tabs/basic",
+              icon: "account",
+              show_badge: false,
+              is_new: false,
+              order_sort: 1,
+              children: [],
+              functions: []
+            },
+            {
+              id: "tabs_dynamic",
+              code: "tabs_dynamic",
+              name_en: "Dynamic Tab",
+              name_kh: "Dynamic Tab",
+              href: "/demo-management/components/tabs/dynamic",
+              icon: "account",
+              show_badge: false,
+              is_new: false,
+              order_sort: 1,
+              children: [],
+              functions: []
+            }
+          ],
+          functions: []
+        }
+      ]
+    },
+    {
+      id: 2,
+      code: "CONFIG",
+      name_en: "Config Management",
+      name_kh: "Config Management",
+      short_name_en: "Config",
+      short_name_kh: "Config",
+      description_en: "Manage configuration for applications",
+      description_kh: "Manage configuration for applications",
+      icon: "settings",
+      href: "/config-management",
+      order_sort: 1,
+      items: []
+    }
+  ]
+};
+
+export default function DemoPage() {
+  return <MultiLevelSidebar menus={sampleMenuData.menus} />;
+}
